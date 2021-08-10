@@ -1,0 +1,74 @@
+{% extends "wrapper.html" %}
+{% load static %}
+{% block title %}
+<title>Andijon Avtovokzal | Transportlar</title>
+{% endblock  %}
+{% block content %}
+  
+
+<!-- Starting of Section -->
+<br><br>
+<section>
+<div class="container">
+  
+
+  <div class="row">
+
+    <!-- Starting of Categories -->
+    <div class="col s12 m12 l12">
+        <ul class="collection with-header center">
+        <li class="collection-header cyan"><h5 class="white-text "><b>Transport Turlari</b></h5></li>
+        <li class="collection-item "><div><a href="{% url 'main:transports' %}"><b>BARCHASI</a></b></div></li>
+        {% for category in categories %}
+        <li class="collection-item "><div><a href="{{category.get_absolute_url}}"><b>{{category.name|upper}}</a></b></div></li>
+        {% endfor %}
+      </ul>
+      </div>
+    <!-- Ending of Categories -->
+
+    <!-- Starting of Car's Card -->     
+    {% for ct in cars_category %} 
+    {% with ct as item %}
+        
+   
+    <div class="col s12 m4 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{item.image.url}}">
+          <span class="card-title">{{item.name}}</span>
+        </div>
+        <div class="card-content">
+        </div>
+      </div>    
+    </div>
+     {% endwith %}
+    {% endfor %}
+
+
+  
+
+<!-- Starting Pagination 
+  <ul class="pagination center">
+    <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
+    <li class="active"><a href="?page=1">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+
+  </ul>
+  -->
+
+<!-- Ending Pagination -->
+    <!-- Ending of Car's Card -->
+  </div>
+</div>
+</section>
+<!-- Ending of Section -->
+<br><br>
+
+
+</main> 
+{% endblock  %}
+       

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  {% block title %}
+  <title>Andijon Avtovokzal | Bosh Sahifa</title>
+  {% endblock  %}
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="short icon" href="https://image.flaticon.com/icons/png/128/3774/3774111.png">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+    <script>
+  if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
+<body>
+  <main>
+
+  <nav id="header" class="z-depth-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'main:home' %}" class="brand-logo">
+      <img style="padding-top:10px;" width="120%"  src="/static/assets/img/logo.svg" alt="There was a logo">
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'main:home' %}" style="font-size: 20px;"><b>Bosh Sahifa</b></a></li>
+        <li><a href="{% url 'main:grafik' %}" style="font-size: 20px;"><b>Yo'nalishlar</b></a></li>
+        <li><a href="{% url 'main:transports' %}" style="font-size: 20px;"><b>Transportlar</b></a></li>
+        <li><a href="{% url 'main:contact' %}" style="font-size: 20px;"><b>Aloqa!</b></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{% url 'main:home' %}" style="font-size: 20px;"><b>Bosh Sahifa</b></a></li>
+        <li><a href="{% url 'main:grafik' %}" style="font-size: 20px;"><b>Yo'nalishlar</b></a></li>
+        <li><a href="{% url 'main:transports' %}" style="font-size: 20px;"><b>Transportlar</b></a></li>
+        <li><a href="{% url 'main:contact' %}" style="font-size: 20px;"><b>Aloqa!</b></a></li>      
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  {% block content %}
+  {% endblock %}
+
+    <footer id="footer" class="page-footer z-depth-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <a href="{% url 'main:home' %}">
+                <img  width="80%"  src="/static/assets/img/logo.svg" alt="There was a logo">
+                </a>
+                <h5 class="right"><b>
+                  Manzil: <i class="material-icons">location_on</i>
+                  O'zbekiston Respublikasi Andijon vil. Andijon sh. Amir Temur 20.
+                </b></h5>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text"> <b> Sahifalar </b></h5>
+                <ul>
+                  <li><a href="{% url 'main:home' %}" class="blue-text" style="font-size: 20px;"><b>Bosh Sahifa</b></a></li>
+                  <li><a href="{% url 'main:grafik' %}" class="blue-text" style="font-size: 20px;"><b>Yo'nalishlar</b></a></li>
+                  <li><a href="{% url 'main:transports' %}" class="blue-text" style="font-size: 20px;"><b>Transportlar</b></a></li>
+                  <li><a href="{% url 'main:contact' %}" class="blue-text" style="font-size: 20px;"><b>Aloqa!</b></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+              <b style="font-size:20px;"> © 2021 Zikrilloh Asralhanov </b>
+            </div>
+          </div>
+        </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/js/materialize.js"></script>
+  <script src="/static/js/init.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,87 @@
+{% extends "wrapper.html" %}
+{% load static %}
+{% block content %}
+  
+
+<!-- Starting of Section -->
+<br><br>
+<section>
+<div class="container-fluid">
+  <div class="col s12 m12 l12 z-depth-5">
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="/static/assets/img/main.png"> <!-- random image -->
+        <div class="caption center-align">
+        </div>
+      </li>
+      <li>
+        <img src="/static/assets/img/main2.png"> <!-- random image -->
+        <div class="caption left-align">
+        </div>
+      </li>
+      <li>
+        <img src="/static/assets/img/main3.png"> <!-- random image -->
+        <div class="caption right-align">
+        </div>
+      </li>
+      <li>
+        <img src="/static/assets/img/main4.png"> <!-- random image -->
+        <div class="caption center-align">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> 
+</section>
+
+<!-- Ending of Section -->
+<br><br>
+<!-- Starting of citiy's Card -->
+<div class="container">
+  <div class="row">
+    {% for city in cities %}
+    <div class="col s12 m3 l3">
+      <div class="card z-depth-5">
+        <div class="card-image">
+          <img class="responsive-img" src="{{city.image.url}}">
+        </div>
+        <div class="card-content center">
+       <h4><b>{{city.title}}</b></h4>
+        </div>
+        <div class="card-action center">
+          <a href="{% url 'main:grafik' %}">Yo'nalishlar Vaqti</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+<!-- Ending of citiy's Card -->
+
+<!-- Starting of car's Card -->
+<div class="container">
+  <div class="row">
+    {% for car in cars %}
+    <div class="col s12 m4 l4">
+      <div class="card z-depth-5">
+        <div class="card-image">
+          <img class="responsive-img" src="{{car.image.url}}">
+        </div>
+        <div class="card-action center">
+          <a href="{% url 'main:grafik' %}">Yo'nalishlar Vaqti</a>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+  </div>
+<!-- Ending of car'sCard -->
+
+
+
+</main> 
+{% endblock  %}
+
+      

@@ -1,0 +1,48 @@
+{% extends "wrapper.html" %}
+{% load static %}
+{% block title %}
+<title>Andijon Avtovokzal | Transportlar</title>
+{% endblock  %}
+{% block content %}
+  
+
+<!-- Starting of Section -->
+<br><br>
+<section>
+<div class="container">
+  
+
+  <div class="row">
+
+    <!-- Starting of Car's Card -->     
+        
+   {% with object as item %}
+       
+   
+    <div class="col s12 m12 l12">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{item.image.url}}">
+          <span class="card-title">{{item.name}}</span>
+        </div>
+        <div class="card-content">
+        </div>
+      </div>    
+    </div>
+    {% endwith %}
+
+
+  
+
+
+    <!-- Ending of Car's Card -->
+  </div>
+</div>
+</section>
+<!-- Ending of Section -->
+<br><br>
+
+
+</main> 
+{% endblock  %}
+       

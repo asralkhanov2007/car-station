@@ -1,0 +1,81 @@
+{% extends "wrapper.html" %}
+{% load static %}
+{% block title %}
+<title>Andijon Avtovokzal | Yo'nalishlar</title> 
+{% endblock  %}
+{% block content %}
+  
+
+<!-- Starting of Section -->
+<br><br>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12">
+    <div class="card">
+      <div class="card-content z-depth-5">        
+      <h5 class="center"><b>Avtobuslar Jadvali:</b></h5>
+      <table>
+        <thead>
+
+          <tr>
+              <th class="center">Yo'nalish:</th>
+              <th class="center">Vaqti:</th>
+              <th class="center">Chipta Narxi:</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for bus in busses %}
+          {% with bus as item %}
+          <tr>
+            <td class="center"><b>{{item.city}}</b></td>
+            <td class="center"><b>{{item.time}}</b></td>
+            <td class="center"><b>{{item.price}} so'm</b></td>
+          </tr>
+           {% endwith %}
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m12 l12">
+    <div class="card">
+      <div class="card-content z-depth-5">        
+      <h5 class="center"><b>Mikroavtobuslar Jadvali:</b></h5>
+      <table>
+        <thead>
+
+          <tr>
+              <th class="center">Yo'nalish:</th>
+              <th class="center">Vaqti:</th>
+              <th class="center">Chipta Narxi:</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for fort in forts %}
+          <tr>
+            <td class="center"><b>{{fort.city}}</b></td>
+            <td class="center"><b>{{fort.time}}</b></td>
+            <td class="center"><b>{{fort.price}} so'm</b></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+</div>
+</div> 
+</section>
+<!-- Ending of Section -->
+<br><br>
+
+
+</main> 
+{% endblock  %}

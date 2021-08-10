@@ -1,0 +1,66 @@
+{% extends "wrapper.html" %}
+{% load static %}
+{% block title %}
+<title>Andijon Avtovokzal | Aloqa!</title>  
+{% endblock  %}
+{% block content %}
+  
+
+<!-- Starting of Section -->
+<br><br>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card z-depth-3">
+        <div class="card-content">
+          <div class="row">
+          <div class="col s12 m8 l8">
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.532387557895!2d72.34788089372401!3d40.759175282206854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bcecc37f9413d5%3A0xee58116cc60f25a9!2z0JDQvdC00LjQttC-0L0g0YguINCQ0LLRgtC-0YHRgtCw0L3RhtC40Y_RgdC4!5e0!3m2!1sru!2s!4v1628491377233!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+          </div>
+
+          <div class="col s12 m4 l4">
+        <form action="" method="POST">    
+        {% csrf_token %}
+        <div class="input-field col s12 m12 l12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" name="name">
+          <label for="icon_prefix">Ismingizni Kiriting</label>
+        </div>
+        <div class="input-field col s12 m12 l12">
+
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate" name="number">
+          <label for="icon_telephone">Raqamingizni Kiriting</label>
+        </div>
+        <div class="input-field col s12 m12 l12">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_prefix" type="email" class="validate" name="email">
+          <label for="icon_prefix">Elektron Manzilingizni Kiriting</label>
+        </div>
+        <div class="input-field col s12 m12 l12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea" name="message"></textarea>
+          <label for="icon_prefix2">Xabaringizni Kiriting</label>
+        </div>
+        <div class="center">
+          <button type="submit" class="btn">Xabarni Jo'natish</button>
+      </div>
+       </form>
+          </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Ending of Section -->
+<br><br>
+
+
+</main> 
+
+{% endblock  %}
